@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "986470101160",
+    "project_id": "qout-a9298",
+    "storage_bucket": "qout-a9298.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986470101160:android:07d59082a8ab50cd27129d",
+        "android_client_info": {
+          "package_name": "com.example.foodcity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "986470101160-lu8ca70ncoe8mcr5qac6uqg0vc4sc7fk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAENYV-HalMuq978n5AMEVfZIhlfase9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "986470101160-lu8ca70ncoe8mcr5qac6uqg0vc4sc7fk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

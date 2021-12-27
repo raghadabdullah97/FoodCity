@@ -1,3 +1,57 @@
 <resources>
     <string name="app_name">FoodCity</string>
+
+    <string name="sign_in">Sign in</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="you_dont_have_account">Do you have an account?</string>
+    <string name="create_account">Create account</string>
+    <string name="register">Create new Account</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="nearby">far away from you</string>
+    <string name="nearby_places">Places near you (view all)</string>
+    <string name="home">Home</string>
+    <string name="restaurants">Nearby Restaurants</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
+
+
+    <!--<resources>-->
+    <!--    <string name="app_name">FoodCity</string>-->
+
+    <!--    &lt;!&ndash; Strings used for fragments for navigation &ndash;&gt;-->
+    <!--    <string name="first_fragment_label">First Fragment</string>-->
+    <!--    <string name="second_fragment_label">Second Fragment</string>-->
+    <!--    <string name="next">Next</string>-->
+    <!--    <string name="previous">Previous</string>-->
+
+    <!--    <string name="hello_first_fragment">Hello first fragment</string>-->
+    <!--    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>-->
+    <!--    &lt;!&ndash; TODO: Remove or change this placeholder text &ndash;&gt;-->
+    <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
+    <!--    <string name="todo">TODO</string>-->
+    <!--    <string name="sign_in">Sign in</string>-->
+    <!--    <string name="e_mail">E-mail</string>-->
+    <!--    <string name="password">Password</string>-->
+    <!--    <string name="enter_your_password">Enter your password</string>-->
+    <!--    <string name="remember_me">remember me</string>-->
+    <!--    <string name="sign_in_now">Sign In Now</string>-->
+    <!--    <string name="don_t_have_an_account">Don\'t have an account?</string>-->
+    <!--    <string name="did_you_forget_your_password">Did You Forget Your Password?</string>-->
+    <!--    <string name="create_account">Create account</string>-->
+    <!--    <string name="passowrd">passowrd</string>-->
+    <!--    <string name="admin_gmail_com">Admin@gmail.com</string>-->
+    <!--    <string name="log_in">Log In</string>-->
+    <!--    <string name="user_name">User Name</string>-->
+    <!--    <string name="e_mail2">E-mail</string>-->
+    <!--    <string name="sign_up">Sign Up</string>-->
+    <!--    <string name="signup">SignUp</string>-->
+    <!--    <string name="already_have_an_account">Already have an account ?</string>-->
+    <!--    <string name="phone_number">Phone Number</string>-->
+    <!--    <string name="log_in2">Log In</string>-->
+    <!--</resources>-->
