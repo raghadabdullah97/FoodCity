@@ -10,6 +10,7 @@ import com.example.foodcity.MainActivity
 import com.example.foodcity.R
 import com.example.foodcity.adapters.CitiesAdapter
 import com.example.foodcity.adapters.NearbyAdapter
+import com.example.foodcity.adapters.OffersAdapter
 import com.example.foodcity.databinding.FragmentHomeBinding
 import com.example.foodcity.util.Status
 import com.example.foodcity.viewmodel.FirebaseViewModel

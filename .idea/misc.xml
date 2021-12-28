@@ -12,6 +12,7 @@
         <entry key="..\:/Users/BTech/AndroidStudioProjects/FoodCity/app/src/main/res/drawable/lock.xml" value="0.2203125" />
         <entry key="..\:/Users/BTech/AndroidStudioProjects/FoodCity/app/src/main/res/drawable/person.xml" value="0.2203125" />
         <entry key="..\:/Users/BTech/AndroidStudioProjects/FoodCity/app/src/main/res/drawable/shape_edite_xml.xml" value="0.2203125" />
+        <entry key="..\:/Users/BTech/AndroidStudioProjects/FoodCity/app/src/main/res/drawable/shape_toolbar.xml" value="0.2203125" />
         <entry key="..\:/Users/BTech/AndroidStudioProjects/FoodCity/app/src/main/res/font/actor.xml" value="0.20462962962962963" />
         <entry key="..\:/Users/BTech/AndroidStudioProjects/FoodCity/app/src/main/res/font/amita.xml" value="0.20462962962962963" />
         <entry key="..\:/Users/BTech/AndroidStudioProjects/FoodCity/app/src/main/res/font/bree_serif.xml" value="0.234375" />
@@ -29,6 +30,8 @@
         <entry key="..\:/Users/BTech/AndroidStudioProjects/FoodCity/app/src/main/res/layout/home1.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/BTech/AndroidStudioProjects/FoodCity/app/src/main/res/layout/item_city.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/BTech/AndroidStudioProjects/FoodCity/app/src/main/res/layout/item_home_near.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/BTech/AndroidStudioProjects/FoodCity/app/src/main/res/layout/item_offer.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/BTech/AndroidStudioProjects/FoodCity/app/src/main/res/layout/toolbar.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

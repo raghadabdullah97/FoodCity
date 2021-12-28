@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Traditional Meals</string>
+
+    <string name="sign_in">تسجيل دخول</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="remember_me">تذكرني</string>
+    <string name="forgot_password">نسيت كلمة المرور؟</string>
+    <string name="you_dont_have_account">هل لديك حساب؟</string>
+    <string name="create_account">انشاء حساب</string>
+    <string name="register">انشاء حساب جديد</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="nearby">يبعد عنك مسافة</string>
+    <string name="nearby_places">أماكن قريبة منك (مشاهدة الجميع)</string>
+    <string name="home">الرئيسية</string>
+    <string name="restaurants">المطاعم القريبة</string>
+    <string name="open">مفتوح</string>
+    <string name="close">مغلق</string>
+
+
+</resources>
