@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.example.foodcity.fragments.SignInFragment"
-        android:label="SignInFragment" >
+        android:label="SignInFragment">
         <action
             android:id="@+id/action_signInFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
@@ -19,36 +18,26 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.foodcity.fragments.RegisterFragment"
-        android:label="RegisterFragment" >
+        android:label="RegisterFragment">
         <action
             android:id="@+id/action_registerFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.raghad.traditionalmeals.fragments.HomeFragment"
-        android:label="HomeFragment" >
+        android:name="com.example.foodcity.fragments.HomeFragment"
+        android:label="HomeFragment">
         <action
             android:id="@+id/action_homeFragment_to_allRestaurantsFragment"
             app:destination="@id/allRestaurantsFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_restaurantDetailsFragment"
-            app:destination="@id/restaurantDetailsFragment" />
+
+
     </fragment>
     <fragment
         android:id="@+id/allRestaurantsFragment"
-        android:name="com.raghad.traditionalmeals.fragments.AllRestaurantsFragment"
-        android:label="AllRestaurantsFragment" >
-        <action
-            android:id="@+id/action_allRestaurantsFragment_to_restaurantDetailsFragment"
-            app:destination="@id/restaurantDetailsFragment" />
+        android:name="com.example.foodcity.fragments.AllRestaurantsFragment"
+        android:label="AllRestaurantsFragment">
+
     </fragment>
-    <fragment
-        android:id="@+id/restaurantDetailsFragment"
-        android:name="com.raghad.traditionalmeals.fragments.RestaurantDetailsFragment"
-        android:label="RestaurantDetailsFragment" >
-        <argument
-            android:name="restaurant"
-            app:argType="com.raghad.traditionalmeals.model.Restaurants" />
-    </fragment>
+
 </navigation>

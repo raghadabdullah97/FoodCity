@@ -1,5 +1,6 @@
 package com.example.foodcity.util
 
+
 import android.location.Location
 
 interface LocationManager {

@@ -1,30 +1,18 @@
 package com.example.foodcity
 
-import android.content.Intent
+
 import android.location.Location
-import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings.Global.getString
-import android.util.Log
-import android.widget.Button
-import android.widget.Toast
-import androidx.core.app.ActivityCompat.startActivityForResult
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.foodcity.databinding.ActivityMainBinding
 import com.example.foodcity.util.LocationHelper
+import com.example.foodcity.util.LocationManager
 import com.example.foodcity.util.MySharedPref
-import com.example.foodcity.util.Status
 import com.example.foodcity.viewmodel.AuthViewModel
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.GoogleAuthProvider
 
 
 class MainActivity : AppCompatActivity() {
@@ -88,6 +76,68 @@ class MainActivity : AppCompatActivity() {
         binding.toolbar.tvToolbarTitle.text = title
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

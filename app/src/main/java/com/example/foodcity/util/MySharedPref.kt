@@ -1,6 +1,6 @@
 package com.example.foodcity.util
-
 import android.content.Context
+
 
 class MySharedPref constructor( context: Context) {
 
@@ -27,6 +27,8 @@ class MySharedPref constructor( context: Context) {
         }
 
     }
+
+
 
     fun setFloat(key: String, query: Float) {
         prefs.edit().putFloat(key, query).apply()
@@ -60,3 +62,10 @@ class MySharedPref constructor( context: Context) {
 
 
 }
+
+
+
+
+
+
+

@@ -1,23 +1,23 @@
+
 package com.example.foodcity.util
 
+
+import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
-import android.location.LocationManager
-import android.location.LocationRequest
 import android.util.Log
-import android.webkit.PermissionRequest
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.gms.location.*
-import com.google.android.gms.location.LocationRequest.PRIORITY_HIGH_ACCURACY
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
-import java.util.jar.Manifest
 
 
 class LocationHelper(var activity: Activity, var locationManager: LocationManager) {
@@ -124,28 +124,28 @@ class LocationHelper(var activity: Activity, var locationManager: LocationManage
 
     ////////////////////////////////////////////////
 
-    /*  private fun showGpsDialog(): MaterialDialog {
+  /*  private fun showGpsDialog(): MaterialDialog {
 
-          val dialog = MaterialDialog(activity)
-              .noAutoDismiss()
-              .customView(R.layout.dialog_gps)
+        val dialog = MaterialDialog(activity)
+            .noAutoDismiss()
+            .customView(R.layout.dialog_gps)
 
-          // set initial preferences
-          //  dialog.findViewById<TextView>(R.id.tvErrorMessage).text = message
+        // set initial preferences
+        //  dialog.findViewById<TextView>(R.id.tvErrorMessage).text = message
 
-          dialog.findViewById<Button>(R.id.btnEnable).setOnClickListener {
+        dialog.findViewById<Button>(R.id.btnEnable).setOnClickListener {
 
-              activity.startActivityForResult(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS), 101)
+            activity.startActivityForResult(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS), 101)
 
-              dialog.dismiss()
-          }
+            dialog.dismiss()
+        }
 
-          dialog.findViewById<Button>(R.id.btnCancel).setOnClickListener {
-              dialog.dismiss()
-          }
+        dialog.findViewById<Button>(R.id.btnCancel).setOnClickListener {
+            dialog.dismiss()
+        }
 
-          return dialog
-      }*/
+        return dialog
+    }*/
 
     private fun isServicesOK(): Boolean {
         Log.d(activity.localClassName, "isServicesOK: checking google services version")
@@ -171,7 +171,7 @@ class LocationHelper(var activity: Activity, var locationManager: LocationManage
         val manager =
             activity.getSystemService(Context.LOCATION_SERVICE) as android.location.LocationManager
         if (!manager.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER)) {
-            // showGpsDialog().show()
+           // showGpsDialog().show()
             return false
         }
         return true

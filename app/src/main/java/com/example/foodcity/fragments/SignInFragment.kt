@@ -2,26 +2,24 @@ package com.example.foodcity.fragments
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.foodcity.MainActivity
 import com.example.foodcity.R
 import com.example.foodcity.databinding.FragmentSignInBinding
 import com.example.foodcity.util.Status
-import com.example.foodcity.util.isEmailValid
 import com.example.foodcity.viewmodel.AuthViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
+import isEmailValid
 
-private const val ARG_PARAM1 = "param1"
+
 class SignInFragment : Fragment(R.layout.fragment_sign_in) {
     private val TAG = "SignInFragment"
     lateinit var binding: FragmentSignInBinding

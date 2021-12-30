@@ -1,5 +1,4 @@
 package com.example.foodcity.fragments
-
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -15,7 +14,9 @@ import com.example.foodcity.databinding.FragmentHomeBinding
 import com.example.foodcity.util.Status
 import com.example.foodcity.viewmodel.FirebaseViewModel
 import com.google.firebase.firestore.FirebaseFirestore
-import com.raghad.traditionalmeals.fragments.HomeFragmentDirections
+
+
+
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
     private val TAG = "HomeFragment"
@@ -26,17 +27,22 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHomeBinding.bind(view)
-        (requireActivity() as MainActivity).setToolbarTitle(getString(R.string.home))
+        (requireActivity()as MainActivity).setToolbarTitle(getString(R.string.home))
         firebaseDb = FirebaseFirestore.getInstance()
         viewModel = ViewModelProvider(this)[FirebaseViewModel::class.java]
         fetchCities()
-        fetchNearby()
+        fetchCNearby()
         initViewPager2Offers()
+
         binding.tvNearby.setOnClickListener {
+
+
             val action = HomeFragmentDirections.actionHomeFragmentToAllRestaurantsFragment()
             findNavController().navigate(action)
         }
+
     }
+
 
     private fun fetchCities() {
         viewModel.fetchCities(firebaseDb).observe(viewLifecycleOwner, {
@@ -62,8 +68,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         })
     }
 
-    private fun fetchNearby() {
-        viewModel.fetchResNearby(requireContext(), firebaseDb).observe(viewLifecycleOwner, {
+
+    private fun fetchCNearby() {
+        viewModel.fetchResNearby(requireContext(),firebaseDb).observe(viewLifecycleOwner, {
             when (it.status) {
                 Status.LOADING -> {
 
@@ -71,16 +78,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
                 }
                 Status.SUCCESS -> {
-                    it.data?.let { res ->
-                        val adapter = NearbyAdapter(res)
-                        binding.rvRestuarant.adapter = adapter
-                        adapter.onItemClick = {
-                            val action =
-                                HomeFragmentDirections.actionHomeFragmentToRestaurantDetailsFragment(
-                                    it
-                                )
-                            findNavController().navigate(action)
-                        }
+                    it.data?.let { data ->
+                        binding.rvRestuarant.adapter = NearbyAdapter(data)
+
                     }
 
                     Log.e(TAG, "SUCCESS: ")
@@ -92,6 +92,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             }
         })
     }
+
 
     private fun initViewPager2Offers() {
         viewModel.fetchOffers(firebaseDb).observe(viewLifecycleOwner, {
@@ -117,5 +118,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         })
 
     }
-
 }
+
+
+
+
+
+

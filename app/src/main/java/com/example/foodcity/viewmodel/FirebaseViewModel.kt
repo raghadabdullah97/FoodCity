@@ -7,12 +7,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.example.foodcity.model.Cities
 import com.example.foodcity.model.Offers
-import com.example.foodcity.model.Products
 import com.example.foodcity.model.Restaurants
 import com.example.foodcity.util.MySharedPref
 import com.example.foodcity.util.Resource
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
+
 
 class FirebaseViewModel : ViewModel() {
 
@@ -31,7 +31,6 @@ class FirebaseViewModel : ViewModel() {
                 Log.e("TAG", "fetchCities: ${e.message}")
                 emit(Resource.error(e.localizedMessage, null))
             }
-
         }
     }
 
@@ -46,20 +45,6 @@ class FirebaseViewModel : ViewModel() {
 
                 val data = firestore.collection("Restaurants").get().await()
                     .toObjects(Restaurants::class.java)
-                data.forEach { Log.e("TAG", "fetchResNearby: ${it.id}", ) }
-                /*  val newData = data.groupBy {
-                       distance(
-                           it.location!!.latitude,
-                           it.location.longitude,
-                           pref.getDouble("lat"),
-                           pref.getDouble("lng")
-                       )
-
-                   }
-                   newData.values.forEach {
-                       Log.e("TAG", "fetchResNearby: ${it[0].location}.", )
-
-                   }*/
 
                 emit(Resource.success(data.reversed()))
             } catch (e: Exception) {
@@ -81,32 +66,12 @@ class FirebaseViewModel : ViewModel() {
                     firestore.collection("Offers").get().await().toObjects(Offers::class.java)
                 emit(Resource.success(data))
             } catch (e: Exception) {
-                Log.e("TAG", "fetchOffers: ${e.message}")
+                Log.e("TAG", "fetchCities: ${e.message}")
                 emit(Resource.error(e.localizedMessage, null))
             }
-
         }
     }
 
 
-    fun fetchProductsByRetName(
-        firestore: FirebaseFirestore,
-        restaurantId: String?
-    ): LiveData<Resource<List<Products>>> {
-        return liveData {
-            emit(Resource.loading(null))
-            try {
 
-                val data =
-                    firestore.collection("Products").whereEqualTo("restaurantId", restaurantId)
-                        .get().await().toObjects(Products::class.java)
-
-                emit(Resource.success(data))
-            } catch (e: Exception) {
-                Log.e("TAG", "fetchProductsByRetName: ${e.message}")
-                emit(Resource.error(e.localizedMessage, null))
-            }
-
-        }
-    }
 }
