@@ -122,30 +122,6 @@ class LocationHelper(var activity: Activity, var locationManager: LocationManage
         fusedLocationClient!!.removeLocationUpdates(locationCallback)
     }
 
-    ////////////////////////////////////////////////
-
-  /*  private fun showGpsDialog(): MaterialDialog {
-
-        val dialog = MaterialDialog(activity)
-            .noAutoDismiss()
-            .customView(R.layout.dialog_gps)
-
-        // set initial preferences
-        //  dialog.findViewById<TextView>(R.id.tvErrorMessage).text = message
-
-        dialog.findViewById<Button>(R.id.btnEnable).setOnClickListener {
-
-            activity.startActivityForResult(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS), 101)
-
-            dialog.dismiss()
-        }
-
-        dialog.findViewById<Button>(R.id.btnCancel).setOnClickListener {
-            dialog.dismiss()
-        }
-
-        return dialog
-    }*/
 
     private fun isServicesOK(): Boolean {
         Log.d(activity.localClassName, "isServicesOK: checking google services version")

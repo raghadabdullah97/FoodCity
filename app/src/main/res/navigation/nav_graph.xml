@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_homeFragment_to_allRestaurantsFragment"
             app:destination="@id/allRestaurantsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_restaurantDetailsFragment"
+            app:destination="@id/restaurantDetailsFragment" />
 
 
     </fragment>
@@ -38,6 +41,18 @@
         android:name="com.example.foodcity.fragments.AllRestaurantsFragment"
         android:label="AllRestaurantsFragment">
 
+        <action
+            android:id="@+id/action_allRestaurantsFragment_to_restaurantDetailsFragment"
+            app:destination="@id/restaurantDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantDetailsFragment"
+        android:name="com.example.foodcity.fragments.RestaurantDetailsFragment"
+        android:label="RestaurantDetailsFragment" >
+        <argument
+            android:name="docId"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 
 </navigation>

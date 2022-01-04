@@ -78,11 +78,17 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
                 }
                 Status.SUCCESS -> {
-                    it.data?.let { data ->
-                        binding.rvRestuarant.adapter = NearbyAdapter(data)
-
+                    it.data?.let { res ->
+                        val adapter = NearbyAdapter(res)
+                        binding.rvRestuarant.adapter = adapter
+                        adapter.onItemClick = {
+                            val action =
+                                HomeFragmentDirections.actionHomeFragmentToRestaurantDetailsFragment(
+                                    it.id
+                                )
+                            findNavController().navigate(action)
+                        }
                     }
-
                     Log.e(TAG, "SUCCESS: ")
                 }
                 Status.ERROR -> {

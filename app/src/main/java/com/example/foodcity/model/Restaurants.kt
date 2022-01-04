@@ -1,5 +1,6 @@
 package com.example.foodcity.model
 
+import com.google.firebase.firestore.DocumentId
 import com.google.firebase.firestore.GeoPoint
 
 
@@ -11,6 +12,8 @@ data class Restaurants(
     val openTime: Long=0,
     val closeTime: Long=0,
     val location: GeoPoint?=null,
+    @DocumentId
+    val id: String?=null,
 
     )
 

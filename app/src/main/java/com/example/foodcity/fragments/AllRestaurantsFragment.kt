@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.foodcity.MainActivity
 import com.example.foodcity.R
 import com.example.foodcity.adapters.NearbyAdapter
@@ -41,8 +42,16 @@ private fun fetchCNearby() {
 
             }
             Status.SUCCESS -> {
-                it.data?.let { data ->
-                    binding.rvRestuarant.adapter = NearbyAdapter(data)
+                it.data?.let { res ->
+                    val adapter = NearbyAdapter(res)
+                    binding.rvRestuarant.adapter = adapter
+                    adapter.onItemClick = {
+                        val action =
+                            AllRestaurantsFragmentDirections.actionAllRestaurantsFragmentToRestaurantDetailsFragment(
+                                it.id
+                            )
+                        findNavController().navigate(action)
+                    }
 
                 }
 

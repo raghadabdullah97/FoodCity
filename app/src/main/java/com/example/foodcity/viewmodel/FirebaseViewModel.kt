@@ -7,12 +7,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.example.foodcity.model.Cities
 import com.example.foodcity.model.Offers
+import com.example.foodcity.model.Products
 import com.example.foodcity.model.Restaurants
 import com.example.foodcity.util.MySharedPref
 import com.example.foodcity.util.Resource
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
 
+// data from Firebase web
 
 class FirebaseViewModel : ViewModel() {
 
@@ -71,6 +73,37 @@ class FirebaseViewModel : ViewModel() {
             }
         }
     }
+
+
+
+    fun fetchProductsByRetName(
+        firestore: FirebaseFirestore,
+        restaurantId : String?
+    ): LiveData<Resource<List<Products>>> {
+        return liveData {
+            emit(Resource.loading(null))
+            try {
+
+                val data =
+                    firestore.collection("Products").whereEqualTo("restaurantId",restaurantId).get().await().toObjects(Products::class.java)
+                emit(Resource.success(data))
+            } catch (e: Exception) {
+                Log.e("TAG", "fetchCities: ${e.message}")
+                emit(Resource.error(e.localizedMessage, null))
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

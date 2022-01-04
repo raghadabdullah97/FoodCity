@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var viewModel: AuthViewModel
     lateinit var pref: MySharedPref
     lateinit var locationHelper: LocationHelper
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
