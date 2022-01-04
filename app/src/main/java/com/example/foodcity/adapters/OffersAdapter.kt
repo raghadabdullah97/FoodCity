@@ -41,7 +41,7 @@ class OffersAdapter(var data: List<Offers>) :
             fun bind(Offers: Offers) {
                 val context = binding.root.context
                 binding.apply {
-                Glide.with(context).load(Offers.imgUrl).into(img)
+                Glide.with(context).load(Offers. imgUrl).into(img)
 
 
 

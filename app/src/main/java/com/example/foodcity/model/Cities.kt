@@ -8,3 +8,4 @@ data class Cities(
     val location: GeoPoint?=null,
 
 )
+

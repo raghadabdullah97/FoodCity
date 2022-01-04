@@ -105,6 +105,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 Status.SUCCESS -> {
                     it.data?.let { offers ->
                         binding.pager.adapter = OffersAdapter(offers)
+                        binding.indicator.setViewPager( binding.pager)
 
                     }
 
