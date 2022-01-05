@@ -50,9 +50,8 @@
         android:name="com.example.foodcity.fragments.RestaurantDetailsFragment"
         android:label="RestaurantDetailsFragment" >
         <argument
-            android:name="docId"
-            app:argType="string"
-            app:nullable="true" />
+            android:name="restaurant"
+            app:argType="com.example.foodcity.model.Restaurants" />
     </fragment>
 
 </navigation>

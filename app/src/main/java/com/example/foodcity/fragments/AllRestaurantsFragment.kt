@@ -48,7 +48,7 @@ private fun fetchCNearby() {
                     adapter.onItemClick = {
                         val action =
                             AllRestaurantsFragmentDirections.actionAllRestaurantsFragmentToRestaurantDetailsFragment(
-                                it.id
+                             it
                             )
                         findNavController().navigate(action)
                     }

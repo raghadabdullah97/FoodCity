@@ -84,7 +84,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                         adapter.onItemClick = {
                             val action =
                                 HomeFragmentDirections.actionHomeFragmentToRestaurantDetailsFragment(
-                                    it.id
+                                    it
                                 )
                             findNavController().navigate(action)
                         }
