@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">Traditional Meals</string>
+    <string name="app_name">FoodCity</string>
+
 
     <string name="sign_in">تسجيل دخول</string>
     <string name="email">البريد الإلكتروني</string>
@@ -16,6 +17,15 @@
     <string name="restaurants">المطاعم القريبة</string>
     <string name="open">مفتوح</string>
     <string name="close">مغلق</string>
+    <string name="profile">الصفحة الشخصية</string>
+    <string name="favorite">المفضلة</string>
+    <string name="search_by_product">البحث باسم الوجبه </string>
+    <string name="drinks">مشروبات</string>
+    <string name="sweets">حلويات</string>
+    <string name="meals">وجبات</string>
+    <string name="restaurant_inside_city">مطاعم داخل المدينة</string>
+    <string name="restaurant_name">إسم المطعم </string>
+    <string name="login_guest">الدخول كزائر</string>
 
 
 </resources>

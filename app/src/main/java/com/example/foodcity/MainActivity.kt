@@ -7,10 +7,9 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.foodcity.databinding.ActivityMainBinding
-import com.example.foodcity.util.LocationHelper
-import com.example.foodcity.util.LocationManager
-import com.example.foodcity.util.MySharedPref
+import com.example.foodcity.util.*
 import com.example.foodcity.viewmodel.AuthViewModel
 import com.google.firebase.auth.FirebaseAuth
 
@@ -34,7 +33,10 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHostFragmentMain) as NavHostFragment
         navController = navHostFragment.findNavController()
+        binding.bottomNav.setupWithNavController(navController)
+        hideBottomBar()
         getCurrentUserLocation()
+
     }
 
     private fun getCurrentUserLocation() {
@@ -75,9 +77,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setToolbarTitle(title: String) {
-
         binding.toolbar.tvToolbarTitle.text = title
     }
-}
 
-  
+    private fun hideBottomBar() {
+        navController.addOnDestinationChangedListener { controller, destination, argument ->
+            when (destination.id) {
+                R.id.registerFragment, R.id.signInFragment -> {
+                    binding.bottomNav.gone()
+                    binding.toolbar.root.gone()
+                }else->{
+                binding.bottomNav.visible()
+                binding.toolbar.root.visible()
+            }
+
+            }
+
+
+        }
+    }
+}

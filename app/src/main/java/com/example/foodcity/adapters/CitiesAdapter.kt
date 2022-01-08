@@ -17,7 +17,7 @@ import java.util.*
 class CitiesAdapter( var data: List<Cities>) :
     RecyclerView.Adapter<CitiesAdapter.ViewHolder>() {
     val TAG = "ChatAdapter"
-    //    var onItemClick: ((Cities) -> Unit)? = null
+      var onItemClick: ((Cities) -> Unit)? = null
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
         val binding =

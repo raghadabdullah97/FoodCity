@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/signInFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/signInFragment"
@@ -13,7 +13,9 @@
             app:destination="@id/registerFragment" />
         <action
             android:id="@+id/action_signInFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -21,11 +23,13 @@
         android:label="RegisterFragment">
         <action
             android:id="@+id/action_registerFragment_to_signInFragment"
-            app:destination="@id/signInFragment" />
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.foodcity.fragments.HomeFragment"
+        android:name="com.example.foodcity.fragments.mainFragments.HomeFragment"
         android:label="HomeFragment">
         <action
             android:id="@+id/action_homeFragment_to_allRestaurantsFragment"
@@ -33,6 +37,9 @@
         <action
             android:id="@+id/action_homeFragment_to_restaurantDetailsFragment"
             app:destination="@id/restaurantDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_cityFragment"
+            app:destination="@id/cityFragment" />
 
 
     </fragment>
@@ -52,6 +59,42 @@
         <argument
             android:name="restaurant"
             app:argType="com.example.foodcity.model.Restaurants" />
+        <action
+            android:id="@+id/action_restaurantDetailsFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment2"
+        android:name="com.example.foodcity.fragments.mainFragments.FavoriteFragment"
+        android:label="FavoriteFragment" />
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.example.foodcity.fragments.mainFragments.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/cityFragment"
+        android:name="com.example.foodcity.fragments.mainFragments.CityFragment"
+        android:label="CityFragment" >
+        <argument
+            android:name="cityName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_cityFragment_to_restaurantDetailsFragment"
+            app:destination="@id/restaurantDetailsFragment" />
+        <action
+            android:id="@+id/action_cityFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.example.foodcity.fragments.mainFragments.ProductDetailsFragment"
+        android:label="ProductDetailsFragment" >
+        <argument
+            android:name="product"
+            app:argType="com.example.foodcity.model.Products" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_restaurantDetailsFragment"
+            app:destination="@id/restaurantDetailsFragment" />
     </fragment>
 
 </navigation>

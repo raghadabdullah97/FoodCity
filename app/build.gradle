@@ -18,7 +18,7 @@ android {
         minSdk 26
         targetSdk 31
         versionCode 1
-        versionName "1.0"
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -85,6 +85,12 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
     //viewPager Indicator
+    implementation 'me.relex:circleindicator:2.1.6'
+
+    // circle imageview
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // viewpager indicator
     implementation 'me.relex:circleindicator:2.1.6'
 
 

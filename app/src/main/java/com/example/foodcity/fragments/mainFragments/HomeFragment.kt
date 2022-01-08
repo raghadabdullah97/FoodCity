@@ -1,10 +1,11 @@
-package com.example.foodcity.fragments
+package com.example.foodcity.fragments.mainFragments
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.foodcity.MainActivity
 import com.example.foodcity.R
 import com.example.foodcity.adapters.CitiesAdapter
@@ -54,7 +55,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 }
                 Status.SUCCESS -> {
                     it.data?.let { cities ->
-                        binding.rvCities.adapter = CitiesAdapter(cities)
+                        val adapter = CitiesAdapter(cities)
+                        binding.rvCities.adapter = adapter
+                        adapter.onItemClick ={
+
+                            val action =
+                            HomeFragmentDirections.actionHomeFragmentToCityFragment(it.name)
+                            findNavController().navigate(action)}
 
                     }
 

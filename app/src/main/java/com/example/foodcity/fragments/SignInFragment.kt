@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.foodcity.MainActivity
 import com.example.foodcity.R
 import com.example.foodcity.databinding.FragmentSignInBinding
+import com.example.foodcity.util.MySharedPref
 import com.example.foodcity.util.Status
 import com.example.foodcity.viewmodel.AuthViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -19,22 +20,29 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import isEmailValid
 
-
 class SignInFragment : Fragment(R.layout.fragment_sign_in) {
     private val TAG = "SignInFragment"
     lateinit var binding: FragmentSignInBinding
     lateinit var viewModel: AuthViewModel
     lateinit var firebaseAuth: FirebaseAuth
     lateinit var googleSignInClient: GoogleSignInClient
+    lateinit var pref: MySharedPref
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSignInBinding.bind(view)
         (requireActivity() as MainActivity).setToolbarTitle(getString(R.string.sign_in))
-
+        pref = MySharedPref(requireContext())
+        isRememberMe()
         viewModel = ViewModelProvider(this)[AuthViewModel::class.java]
         firebaseAuth = FirebaseAuth.getInstance()
         binding.apply {
+
+            btnLoginAsGuest.setOnClickListener {
+                val action =
+                    SignInFragmentDirections.actionSignInFragmentToHomeFragment()
+                findNavController().navigate(action)
+            }
 
             btnSignIn.setOnClickListener {
                 val email = etEmail.text.toString()
@@ -63,6 +71,10 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
 
                         }
                         Status.SUCCESS -> {
+                            pref.setString("userId",it.data?.user?.uid)
+                            if (rb.isChecked){
+                                pref.setBoolean("isRegister",true)
+                            }
                             val action =
                                 SignInFragmentDirections.actionSignInFragmentToHomeFragment()
                             findNavController().navigate(action)
@@ -134,6 +146,15 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
                     }
                 }
             })
+    }
+
+    private fun isRememberMe(){
+        if (pref.getBoolean("isRegister")){
+            val action =
+                SignInFragmentDirections.actionSignInFragmentToHomeFragment()
+            findNavController().navigate(action)
+            return
+        }
     }
 
 }

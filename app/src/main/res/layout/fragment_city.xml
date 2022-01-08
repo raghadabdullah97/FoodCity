@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <EditText
+                android:id="@+id/searchHome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:drawableEnd="@drawable/ic_search"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/cairo_reqular"
+                android:hint="@string/search_by_product"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:textColorHint="@color/colorGrey"
+                android:textSize="@dimen/_10ssp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabMode="scrollable"
+            app:tabPaddingEnd="@dimen/_20sdp"
+            app:tabPaddingStart="@dimen/_20sdp"
+            app:tabRippleColor="@color/gray_light"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabTextAppearance="@style/tab_text"
+            app:tabTextColor="@color/colorGrey2"/>
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:minHeight="@dimen/_200sdp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tvNearby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="?attr/selectableItemBackground"
+            android:fontFamily="@font/cairo_reqular"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:padding="@dimen/_3sdp"
+            android:text="@string/restaurant_inside_city"
+            android:textColor="@color/black" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRestuarant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/item_home_near" />
+    </LinearLayout>
+
+</ScrollView>

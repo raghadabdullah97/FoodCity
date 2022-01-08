@@ -1,8 +1,11 @@
 package com.example.foodcity.model
 
+import android.os.Parcelable
 import com.google.firebase.firestore.DocumentId
+import kotlinx.parcelize.Parcelize
 
 //import com.google.firebase.firestore.DocumentId
+@Parcelize
 data class Products(
     val name: String = "",
     val details: String = "",
@@ -11,7 +14,7 @@ data class Products(
     val catType: ProductCategory? = null,
     @DocumentId
     val id: String?=null,
-)
+): Parcelable
 
 
 

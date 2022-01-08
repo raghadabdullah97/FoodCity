@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
@@ -17,24 +16,22 @@
             android:layout_height="match_parent"
             android:fillViewport="true">
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingBottom="@dimen/_minus40sdp">
+                android:paddingBottom="@dimen/_40sdp">
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="@dimen/_minus20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
                     android:fontFamily="@font/cairo_bold"
-                    android:text="register"
+                    android:text="@string/register"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/_minus15sdp"/>
-
+                    android:textSize="@dimen/_15ssp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -43,13 +40,13 @@
                     android:layout_marginTop="@dimen/_20sdp"
                     android:src="@drawable/ic_launcher_background" />
 
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_20sdp"
                     android:layout_marginTop="@dimen/_30sdp"
                     android:orientation="vertical">
-
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -59,7 +56,6 @@
                         android:text="@string/email"
                         android:textColor="@color/colorBlack"
                         android:textSize="@dimen/_12ssp" />
-
 
                     <EditText
                         android:id="@+id/etEmail"
@@ -78,14 +74,12 @@
 
                 </LinearLayout>
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_20sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:orientation="vertical">
-
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -173,6 +167,14 @@
                     android:textAllCaps="false"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/_12ssp" />
+
+                <ProgressBar
+                    android:visibility="gone"
+                    android:id="@+id/progressBar"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
 
 
             </LinearLayout>

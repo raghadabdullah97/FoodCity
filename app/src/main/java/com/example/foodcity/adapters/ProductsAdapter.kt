@@ -17,7 +17,7 @@ class ProductsAdapter(var data: List<Products>) :
 
     val TAG = "ProductsAdapter"
 
-    var onItemClick: ((String)->Unit)?=null
+    var onItemClick: ((Products)->Unit)?=null
 
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
@@ -47,6 +47,10 @@ class ProductsAdapter(var data: List<Products>) :
                 tvDetailsProduct.text = products.details
                 tvCat.text = products.catType?.title
                 Glide.with(context).load(products.imgUrl).into(carImgProduct)
+
+                rlProduct.setOnClickListener {
+                    onItemClick?.invoke(products)
+                }
 
 
             }
