@@ -43,10 +43,10 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         handleProductDetails()
         fetchRestaurantByProduct(args.product.restaurantId)
 
-        binding.btnFavorite.setOnClickListener {
-            Log.e("TAG", "btnFavorite: ", )
-            addToFavorite(args.product)
-        }
+//        binding.btnFavorite.setOnClickListener {
+//            Log.e("TAG", "btnFavorite: ", )
+//            addToFavorite(args.product)
+//        }
     }
 
     private fun handleProductDetails() {
@@ -97,8 +97,8 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
 
         }
     }
-
-    private fun addToFavorite(products: Products){
-        viewModel.addToFavorite(Firebase.firestore,pref.getString("userId")!!,products)
-    }
-}}
+//
+//    private fun addToFavorite(products: Products){
+//        viewModel.addToFavorite(Firebase.firestore,pref.getString("userId")!!,products)
+//    }
+}

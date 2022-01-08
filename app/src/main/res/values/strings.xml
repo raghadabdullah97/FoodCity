@@ -26,4 +26,8 @@
     <string name="restaurant_inside_city">Restaurants inside</string>
     <string name="restaurant_name">Restaurant name</string>
     <string name="login_guest">Enter as guest</string>
+    <string name="name_city">name city</string>
+    <string name="km">km</string>
+    <string name="_20_km">20 Km</string>
+    <string name="جدة">جدة</string>
 </resources>

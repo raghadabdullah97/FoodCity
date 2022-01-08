@@ -20,6 +20,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import isEmailValid
 
+
 class SignInFragment : Fragment(R.layout.fragment_sign_in) {
     private val TAG = "SignInFragment"
     lateinit var binding: FragmentSignInBinding

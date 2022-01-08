@@ -13,7 +13,6 @@ import java.lang.Exception
 
 
 
-
 class AuthViewModel : ViewModel() {
 
 
@@ -71,4 +70,6 @@ class AuthViewModel : ViewModel() {
 
         }
     }
+
+
 }

@@ -26,6 +26,10 @@
     <string name="restaurant_inside_city">مطاعم داخل المدينة</string>
     <string name="restaurant_name">إسم المطعم </string>
     <string name="login_guest">الدخول كزائر</string>
+    <string name="name_city">name city</string>
+    <string name="km">km</string>
+    <string name="_20_km">20 Km</string>
+    <string name="جدة">جدة</string>
 
 
 </resources>
