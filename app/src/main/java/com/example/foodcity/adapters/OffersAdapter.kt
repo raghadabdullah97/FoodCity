@@ -41,15 +41,8 @@ class OffersAdapter(var data: List<Offers>) :
             fun bind(Offers: Offers) {
                 val context = binding.root.context
                 binding.apply {
+                    //".into"=Convert from image link to image:
                 Glide.with(context).load(Offers. imgUrl).into(img)
-
-
-
-
-
-
-
-
 
 
 
@@ -59,42 +52,3 @@ class OffersAdapter(var data: List<Offers>) :
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

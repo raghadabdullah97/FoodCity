@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
-        pref = MySharedPref(this)
-        val navHostFragment =
+        pref = MySharedPref(this) //because get (citi,location,context)
+        val navHostFragment = // Definition of " nav in mainActivity XML"
             supportFragmentManager.findFragmentById(R.id.navHostFragmentMain) as NavHostFragment
         navController = navHostFragment.findNavController()
         binding.bottomNav.setupWithNavController(navController)
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         getCurrentUserLocation()
 
     }
-
+    // fun bind(city: Cities) from "CitiAdapter"
     private fun getCurrentUserLocation() {
         locationHelper = LocationHelper(this, object : LocationManager {
             override fun onLocationChanged(location: Location?) {
@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+        //fun getLastKnownLocation(location: Location?)
     private fun saveLocationInPref(location: Location?) {
         if (location != null) {
             pref.setDouble("lat", location.latitude)

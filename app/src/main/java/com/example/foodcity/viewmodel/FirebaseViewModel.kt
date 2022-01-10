@@ -18,7 +18,7 @@ import kotlinx.coroutines.tasks.await
 
 class FirebaseViewModel : ViewModel() {
 
-
+    //Show me all the cities:
     fun fetchCities(
         firestore: FirebaseFirestore,
     ): LiveData<Resource<List<Cities>>> {
@@ -36,6 +36,7 @@ class FirebaseViewModel : ViewModel() {
         }
     }
 
+    //Show me all the restaurantNearBy:
     fun fetchResNearby(
         context: Context,
         firestore: FirebaseFirestore,
@@ -47,7 +48,7 @@ class FirebaseViewModel : ViewModel() {
 
                 val data = firestore.collection("Restaurants").get().await()
                     .toObjects(Restaurants::class.java)
-
+                    //"reversed"= Places from closest to farthest:
                 emit(Resource.success(data.reversed()))
             } catch (e: Exception) {
                 Log.e("TAG", "fetchResNearby: ${e.message}")
@@ -57,6 +58,7 @@ class FirebaseViewModel : ViewModel() {
         }
     }
 
+    //Show me all the Offers:
     fun fetchOffers(
         firestore: FirebaseFirestore,
     ): LiveData<Resource<List<Offers>>> {
@@ -75,7 +77,7 @@ class FirebaseViewModel : ViewModel() {
     }
 
 
-
+    // RestaurantDetails fragment :
     fun fetchProductsByRetName(
         firestore: FirebaseFirestore,
         restaurantId : String?
@@ -85,6 +87,7 @@ class FirebaseViewModel : ViewModel() {
             try {
 
                 val data =
+                    //".whereEqualTo"=filter from product as Restaurant special Id:
                     firestore.collection("Products").whereEqualTo("restaurantId",restaurantId).get().await().toObjects(Products::class.java)
                 emit(Resource.success(data))
             } catch (e: Exception) {

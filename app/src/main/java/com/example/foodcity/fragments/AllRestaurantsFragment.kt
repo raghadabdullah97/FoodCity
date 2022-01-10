@@ -24,6 +24,7 @@ lateinit var viewModel: FirebaseViewModel
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
    super.onViewCreated(view, savedInstanceState)
    binding = FragmentAllRestaurantsBinding.bind(view)
+    //ToolPar Title:
     (requireActivity()as MainActivity).setToolbarTitle(getString(R.string.restaurants))
     firebaseDb = FirebaseFirestore.getInstance()
    viewModel = ViewModelProvider(this)[FirebaseViewModel::class.java]
@@ -47,9 +48,8 @@ private fun fetchCNearby() {
                     binding.rvRestuarant.adapter = adapter
                     adapter.onItemClick = {
                         val action =
-                            AllRestaurantsFragmentDirections.actionAllRestaurantsFragmentToRestaurantDetailsFragment(
-                             it
-                            )
+                            //" it "= @DocumentId :
+                            AllRestaurantsFragmentDirections.actionAllRestaurantsFragmentToRestaurantDetailsFragment( it )
                         findNavController().navigate(action)
                     }
 

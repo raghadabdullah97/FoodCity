@@ -42,9 +42,9 @@ class CitiesAdapter( var data: List<Cities>) :
             val context = binding.root.context
             binding.apply {
                 tvName.text = city.name
-
+                //get location user:
                 val pref = MySharedPref(context)
-
+            //"distance"The current location of the (user and city):
                 val distance = distance(
                     city.location!!.latitude,
                     city.location.longitude,

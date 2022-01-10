@@ -17,7 +17,7 @@ fun Long.toTime(format: String = "hh:mma") =
 
 //A function that checks if the restaurant is open or closed
 private val TIME_PARSER = DateTimeFormatter.ofPattern("hh:mma", Locale.ENGLISH)
-
+//"RestaurantDetailsFragment " open or close time of rest:
 fun isRestaurantOpen(start: Long, end: Long):Boolean {
     val currentTime = LocalTime.parse(Date().time.toTime(), TIME_PARSER)
     val startTime = LocalTime.parse(start.toTime(), TIME_PARSER)

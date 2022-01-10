@@ -26,6 +26,7 @@ import toTime
 
 class RestaurantDetailsFragment : Fragment(R.layout.fragment_restaurant_details) {
     private val TAG = "RestaurantDetailsFragment"
+    //"arg" = Receive ID from  AllRestaurantsFragmentDirections:
     val arg: RestaurantDetailsFragmentArgs by navArgs()
     lateinit var binding: FragmentRestaurantDetailsBinding
     lateinit var firebaseDb: FirebaseFirestore
@@ -92,12 +93,12 @@ class RestaurantDetailsFragment : Fragment(R.layout.fragment_restaurant_details)
             //color from ViewHelper:
             if (isRestaurantOpen(arg.restaurant.openTime, arg.restaurant.closeTime)) {
                 tvIsOpenStore.text = getString(R.string.open)
-                tvIsOpenStore.backgroundTint(R.color.green_light)
-                tvIsOpenStore.textColor(R.color.colorPrimary)
+                tvIsOpenStore.backgroundTint(R.color.green_light) //from ViewHelper Class
+                tvIsOpenStore.textColor(R.color.colorPrimary) //from ViewHelper Class
             } else {
                 tvIsOpenStore.text = getString(R.string.close)
-                tvIsOpenStore.backgroundTint(R.color.red_light)
-                tvIsOpenStore.textColor(R.color.colorRed3)
+                tvIsOpenStore.backgroundTint(R.color.red_light) //from ViewHelper Class
+                tvIsOpenStore.textColor(R.color.colorRed3) //from ViewHelper Class
 
 
             }

@@ -26,6 +26,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentRegisterBinding.bind(view)
+        //ToolPar Title:
         (requireActivity() as MainActivity).setToolbarTitle(getString(R.string.register))
 
         viewModel = ViewModelProvider(this)[AuthViewModel::class.java]
@@ -73,7 +74,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                         }
                         Status.SUCCESS -> {
                             progressBar.gone()
-                            val action =
+                            val action = //proses move between 2 fragment
                                 RegisterFragmentDirections.actionRegisterFragmentToSignInFragment()
                             findNavController().navigate(action)
 

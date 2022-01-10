@@ -22,12 +22,13 @@ import com.google.firebase.firestore.FirebaseFirestore
 class HomeFragment : Fragment(R.layout.fragment_home) {
     private val TAG = "HomeFragment"
     lateinit var binding: FragmentHomeBinding
-    lateinit var firebaseDb: FirebaseFirestore
+    lateinit var firebaseDb: FirebaseFirestore //From website firebaseDb
     lateinit var viewModel: FirebaseViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHomeBinding.bind(view)
+        //ToolPar Title:
         (requireActivity()as MainActivity).setToolbarTitle(getString(R.string.home))
         firebaseDb = FirebaseFirestore.getInstance()
         viewModel = ViewModelProvider(this)[FirebaseViewModel::class.java]
@@ -118,6 +119,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 Status.SUCCESS -> {
                     it.data?.let { offers ->
                         binding.pager.adapter = OffersAdapter(offers)
+                        // viewpager indicator "_ _ _ _ ":
                         binding.indicator.setViewPager( binding.pager)
 
                     }

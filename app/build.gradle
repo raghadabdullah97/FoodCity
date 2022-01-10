@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-
+    //used exchanged "data binding = view binding"
     buildFeatures {
         viewBinding = true
     }
@@ -69,7 +69,7 @@ dependencies {
     // Lifecycles only (without ViewModel or LiveData)
     // implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
 
-    //coroutines
+    //coroutines with firbase
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.1.1'
 
     //dimens library
@@ -77,20 +77,20 @@ dependencies {
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
 
 
-    //request permission library
+    //request permission library = ""distance"The current location of the (user and city) = (location Helper/Manager):"
     implementation 'com.karumi:dexter:6.2.0'
 
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
-    //viewPager Indicator
+    //viewPager Indicator "home screen" XML
     implementation 'me.relex:circleindicator:2.1.6'
 
-    // circle imageview
+    // circle imageview , xml
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
-    // viewpager indicator
+    // viewpager indicator "_ _ _ _ ":
     implementation 'me.relex:circleindicator:2.1.6'
 
 
