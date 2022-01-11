@@ -30,9 +30,11 @@ class CityFragment : Fragment(R.layout.fragment_city) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentCityBinding.bind(view)
+        //TabLayout:
         (requireActivity() as MainActivity).setToolbarTitle(args.cityName)
         firebaseDb = FirebaseFirestore.getInstance()
         viewModel = ViewModelProvider(this)[FirebaseViewModel::class.java]
+        //get from "File String " :
         tabTitle = arrayOf(
             getString(R.string.meals),
             getString(R.string.drinks),
@@ -40,14 +42,18 @@ class CityFragment : Fragment(R.layout.fragment_city) {
         )
 
         binding.apply {
-
+        //from "MyViewPagerAdapter":
             viewPager.adapter = MyViewPagerAdapter(args.cityName, childFragmentManager, lifecycle)
+            // Connects Tap with ViewPager :
             TabLayoutMediator(tabLayout, viewPager) { tab, postion ->
+                //postion 0 = meals
+                //postion 1 = drinks
+                //postion 2 = sweets
                 tab.text = tabTitle[postion]
 
 
             }.attach()
-
+            //get text "restaurant inside ":
             tvNearby.text = "${getString(R.string.restaurant_inside_city)} ${args.cityName}"
 
         }

@@ -98,8 +98,8 @@ class FirebaseViewModel : ViewModel() {
     }
 
 
-
-
+    //used in "ProductFragment":
+    //get The meal depends on the city, tow arg(cityName,catType):
     fun fetchProductsCityName(
         firestore: FirebaseFirestore,
         cityName: String,
@@ -125,7 +125,7 @@ class FirebaseViewModel : ViewModel() {
         }
     }
 
-
+    // get Restaurants by city name :
     fun fetchRestaurantsByCityName(
         firestore: FirebaseFirestore,
         cityName: String,

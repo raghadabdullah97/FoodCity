@@ -6,13 +6,18 @@ import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.foodcity.fragments.mainFragments.ProductsFragment
 
+
+//second type of " Adapter " :
+//add pram "val cityName:String":
 class MyViewPagerAdapter (val cityName:String, fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
-    override fun getItemCount(): Int { // number of fragment ( product,drink , sweet )
+    // this fun " number" of fragment ( product,drink , sweet ):
+    override fun getItemCount(): Int {
         return 3
     }
-
-    override fun createFragment(position: Int): Fragment { // fragment فيها recycler View , display " product"
+    // fragment فيها recycler View , display " product":
+    override fun createFragment(position: Int): Fragment {
+        //add pram "val cityName:String":
         return ProductsFragment(cityName , position)
     }
 

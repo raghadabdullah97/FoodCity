@@ -19,7 +19,7 @@ import com.example.foodcity.util.Status
 import com.example.foodcity.viewmodel.FirebaseViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.firestore.FirebaseFirestore
-
+//"tow constructor (val cityName: String, val position: Int) from "MyViewPagerAdapter ":
 class ProductsFragment(val cityName: String, val position: Int) :
     Fragment(R.layout.fragment_products) {
     private val TAG = "ProductsFragment"
@@ -27,14 +27,14 @@ class ProductsFragment(val cityName: String, val position: Int) :
     val args: CityFragmentArgs by navArgs()
     lateinit var viewModel: FirebaseViewModel
     lateinit var firebaseDb: FirebaseFirestore
-    lateinit var catType: String
+    lateinit var catType: String //position definition
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentProductsBinding.bind(view)
         firebaseDb = FirebaseFirestore.getInstance()
         viewModel = ViewModelProvider(this)[FirebaseViewModel::class.java]
         fetchProductsCityName()
-
+        //  check the position:
         when (position){
 
             0-> catType = getString(R.string.meals)
@@ -47,9 +47,12 @@ class ProductsFragment(val cityName: String, val position: Int) :
     }
 
 
-
-
+    //require from server:
+    //used in "ProductFragment":
+    //get The meal depends on the city, tow arg(cityName,catType):
         private fun fetchProductsCityName() {
+        //data come from "viewModel":
+        // "fetchProductsCityName"take 3 arg(firebaseDb,cityName,catType):
         viewModel.fetchProductsCityName(firebaseDb, cityName, catType).observe(viewLifecycleOwner, {
 
             when (it.status) {
@@ -59,6 +62,7 @@ class ProductsFragment(val cityName: String, val position: Int) :
                 }
                 Status.SUCCESS -> {
                     it.data?.let { list ->
+                        //display recycler :
                         initRecycleView(list)
 
                     }

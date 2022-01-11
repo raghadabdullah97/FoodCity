@@ -56,6 +56,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 }
                 Status.SUCCESS -> {
                     it.data?.let { cities ->
+                        //when click on item city send "city name to "CityFragment":
                         val adapter = CitiesAdapter(cities)
                         binding.rvCities.adapter = adapter
                         adapter.onItemClick ={

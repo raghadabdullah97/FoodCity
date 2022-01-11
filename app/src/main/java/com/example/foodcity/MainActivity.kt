@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = // Definition of " nav in mainActivity XML"
             supportFragmentManager.findFragmentById(R.id.navHostFragmentMain) as NavHostFragment
         navController = navHostFragment.findNavController()
+        //bottom nav menu XML :
         binding.bottomNav.setupWithNavController(navController)
         hideBottomBar()
         getCurrentUserLocation()
