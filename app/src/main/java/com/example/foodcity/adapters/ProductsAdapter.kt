@@ -8,9 +8,10 @@ import com.example.foodcity.databinding.ItemOfferBinding
 import com.example.foodcity.databinding.ItemProductBinding
 import com.example.foodcity.model.Offers
 import com.example.foodcity.model.Products
+import com.example.foodcity.util.gone
 
 
-class ProductsAdapter(var data: List<Products>) :
+class ProductsAdapter(var data: List<Products>,var isFavorite: Boolean=false) :
     RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
 
 
@@ -18,6 +19,8 @@ class ProductsAdapter(var data: List<Products>) :
     val TAG = "ProductsAdapter"
 
     var onItemClick: ((Products)->Unit)?=null
+    var onFavoriteClick: ((Products) -> Unit)? = null
+
 
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
@@ -47,17 +50,22 @@ class ProductsAdapter(var data: List<Products>) :
                 tvDetailsProduct.text = products.details
                 tvCat.text = products.catType?.title
                 Glide.with(context).load(products.imgUrl).into(carImgProduct)
-
+        //When click on the "Product item" because To display product details:
                 rlProduct.setOnClickListener {
                     onItemClick?.invoke(products)
                 }
+                btnAddToFavorite.setOnClickListener{
+                    onFavoriteClick?.invoke(products)
+                }
 
-
+                if (isFavorite){
+                    btnAddToFavorite.gone()
+                }
             }
+
+
         }
     }
-
-
 
 
 }

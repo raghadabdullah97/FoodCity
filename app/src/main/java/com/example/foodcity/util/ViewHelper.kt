@@ -38,7 +38,7 @@ fun TextView.colorLink(color: Int) {
 fun TextView.alpha(alpha: Float) {
     this.alpha = alpha
 }
-
+//Change the color of the icon:
 fun ImageView.tint(color: Int) {
     this.setColorFilter(
         ContextCompat.getColor(context, color),
@@ -46,11 +46,11 @@ fun ImageView.tint(color: Int) {
     );
 }
 
-
+//used in  RegisterFragment:
 fun View.visible() {
     this.visibility = View.VISIBLE
 }
-
+//Hide BottomBar from "Register and sign in Fragment":
 fun View.gone() {
     this.visibility = View.GONE
 }

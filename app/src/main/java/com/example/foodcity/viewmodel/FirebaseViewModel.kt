@@ -149,7 +149,7 @@ class FirebaseViewModel : ViewModel() {
     }
 
 
-
+    //get "Restaurant data"
     fun fetchRestaurantByProduct(
         firestore: FirebaseFirestore,
         restaurantId: String,
@@ -157,7 +157,7 @@ class FirebaseViewModel : ViewModel() {
         return liveData {
             emit(Resource.loading(null))
             try {
-
+        //return single object "id restaurant":
                 val data =
                     firestore.collection("Restaurants").document(restaurantId)
                         .get().await().toObject(Restaurants::class.java)
@@ -170,24 +170,48 @@ class FirebaseViewModel : ViewModel() {
 
         }
     }
+        //variables from file "model favorite ":
+    fun addToFavorite(firestore: FirebaseFirestore,userId:String, product: Products){
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val favorite = Favorite(userId,product)
+                //"document("${product.id!!}_$userId")"= Each userId can be added to favourites
+                firestore.collection("Favorite").document("${product.id!!}_$userId").set(favorite).await()
 
-//
-//    fun addToFavorite(
-//        firestore: FirebaseFirestore,
-//        userId: String,
-//        products: Products
-//    ) {
-//        CoroutineScope(Dispatchers.IO).launch {
-//            try {
-//                val favorite = Favorite(userId, products)
-//                firestore.collection("Favorite").document(products.id!!).set(favorite).await()
-//            } catch (e: Exception) {
-//                Log.e("TAG", "addToFavoriteEx: ${e.message}")
-//            }
-//        }
-//
-//    }
-//
+            } catch (ex: Exception) {
+                Log.e("TAG", "addToFavoriteEx: ${ex.message}")
+                ex.printStackTrace()
+            }
+        }
+
+    }
+
+
+
+
+
+    fun fetchFavoriteProducts(
+        firestore: FirebaseFirestore,
+        userId: String
+    ): LiveData<Resource<List<Favorite>>> {
+        return liveData {
+            emit(Resource.loading(null))
+            try {
+
+                val data =
+                    //don't get all data  just get my data fav :
+                    firestore.collection("Favorite").whereEqualTo("userId",userId)
+                        .get().await().toObjects(Favorite::class.java)
+
+                emit(Resource.success(data))
+            } catch (e: Exception) {
+                Log.e("TAG", "fetchFavoriteProductsEx: ${e.message}")
+                emit(Resource.error(e.localizedMessage, null))
+            }
+
+        }
+    }
+
 
 
 

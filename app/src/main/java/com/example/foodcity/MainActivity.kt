@@ -82,7 +82,9 @@ class MainActivity : AppCompatActivity() {
         binding.toolbar.tvToolbarTitle.text = title
     }
 
+    //Hide BottomBar from "Register and sign in Fragment" , and "tool par":
     private fun hideBottomBar() {
+        //return 3 variable"controller, destination, argument"
         navController.addOnDestinationChangedListener { controller, destination, argument ->
             when (destination.id) {
                 R.id.registerFragment, R.id.signInFragment -> {

@@ -37,7 +37,11 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
         isRememberMe()
         viewModel = ViewModelProvider(this)[AuthViewModel::class.java]
         firebaseAuth = FirebaseAuth.getInstance()
+
+
+        //AsGuest :
         binding.apply {
+
 
             btnLoginAsGuest.setOnClickListener {
                 val action =
@@ -72,6 +76,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
 
                         }
                         Status.SUCCESS -> {
+                            // store " UID " in Fav :
                             pref.setString("userId",it.data?.user?.uid)
                             if (rb.isChecked){
                                 pref.setBoolean("isRegister",true)

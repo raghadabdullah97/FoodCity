@@ -68,7 +68,9 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 viewModel.signup(firebaseAuth, email, password).observe(viewLifecycleOwner, {
                     when (it.status) {
                         Status.LOADING -> {
-                            progressBar.visible()
+                            //in exchange for" progressBar.visible()=View.VISIBLE" =False
+                             //progressBar.visible() = True
+                            progressBar.visible() //frome View Helper
                             Log.e(TAG, "LOADING: ")
 
                         }

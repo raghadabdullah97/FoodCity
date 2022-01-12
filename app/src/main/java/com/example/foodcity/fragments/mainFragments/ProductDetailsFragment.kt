@@ -36,21 +36,23 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentProductDetailsBinding.bind(view)
+        (requireActivity() as MainActivity).setToolbarTitle(getString(R.string.product_details))
         viewModel = ViewModelProvider(this)[FirebaseViewModel::class.java]
         firestore = FirebaseFirestore.getInstance()
         pref= MySharedPref(requireContext())
 
         handleProductDetails()
-        fetchRestaurantByProduct(args.product.restaurantId)
+        fetchRestaurantByProduct(args.product.restaurantId) //from firestore
 
-//        binding.btnFavorite.setOnClickListener {
-//            Log.e("TAG", "btnFavorite: ", )
-//            addToFavorite(args.product)
-//        }
+        binding.btnFavorite.setOnClickListener {
+            Log.e("TAG", "btnFavorite: ", )
+            addToFavorite(args.product)
+        }
     }
 
     private fun handleProductDetails() {
         binding.apply {
+            //Details from "@Parcelize":
             tvProductTitle.text = args.product.name
             tvProductDetails.text = args.product.details
             Glide.with(requireContext()).load(args.product.imgUrl).into(imgProduct)
@@ -86,6 +88,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
             tvRestaurantDetails.text = restaurant.details
             Glide.with(requireContext()).load(restaurant.imgUrl).into(imgRestaurant)
 
+            //When click on the "restaurant item" because To display restaurant details:
             linStore.setOnClickListener {
                 val action =
                     ProductDetailsFragmentDirections.actionProductDetailsFragmentToRestaurantDetailsFragment(
@@ -97,8 +100,12 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
 
         }
     }
-//
-//    private fun addToFavorite(products: Products){
-//        viewModel.addToFavorite(Firebase.firestore,pref.getString("userId")!!,products)
-//    }
+    private fun addToFavorite(products: Products) {
+
+        viewModel.addToFavorite(firestore, pref.getString("userId")!!, products)
+
+
+    }
+
+
 }

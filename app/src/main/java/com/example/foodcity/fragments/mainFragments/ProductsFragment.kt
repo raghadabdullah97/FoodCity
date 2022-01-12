@@ -7,17 +7,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.foodcity.MainActivity
 import com.example.foodcity.R
-import com.example.foodcity.adapters.MyViewPagerAdapter
 import com.example.foodcity.adapters.ProductsAdapter
-import com.example.foodcity.databinding.FragmentCityBinding
-import com.example.foodcity.databinding.FragmentPrfileBinding
 import com.example.foodcity.databinding.FragmentProductsBinding
 import com.example.foodcity.model.Products
+import com.example.foodcity.util.MySharedPref
 import com.example.foodcity.util.Status
 import com.example.foodcity.viewmodel.FirebaseViewModel
-import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.firestore.FirebaseFirestore
 //"tow constructor (val cityName: String, val position: Int) from "MyViewPagerAdapter ":
 class ProductsFragment(val cityName: String, val position: Int) :
@@ -28,11 +24,15 @@ class ProductsFragment(val cityName: String, val position: Int) :
     lateinit var viewModel: FirebaseViewModel
     lateinit var firebaseDb: FirebaseFirestore
     lateinit var catType: String //position definition
+    lateinit var pref: MySharedPref
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentProductsBinding.bind(view)
         firebaseDb = FirebaseFirestore.getInstance()
         viewModel = ViewModelProvider(this)[FirebaseViewModel::class.java]
+        pref = MySharedPref(requireContext())
+
         fetchProductsCityName()
         //  check the position:
         when (position){
@@ -77,9 +77,9 @@ class ProductsFragment(val cityName: String, val position: Int) :
     }
 
 
-
+    //When click on the "Product item" because To display product details:
     private fun initRecycleView(data:List<Products>){
-        val adapter = ProductsAdapter(data)
+        val adapter = ProductsAdapter(data, true)
         binding.rvProducts.adapter = adapter
 
         adapter.onItemClick = {
@@ -87,17 +87,18 @@ class ProductsFragment(val cityName: String, val position: Int) :
                 CityFragmentDirections.actionCityFragmentToProductDetailsFragment(it)
             findNavController().navigate(action)
         }
-//        adapter.onFavoriteClick={
-//            Log.e(TAG, "onFavoriteClick: ", )
-//            addToFavorite(it)
-//        }
+        //when click = add to fav:
+        adapter.onFavoriteClick = {
+            addToFavorite(it)
+        }
+
+    }
+    //
+    private fun addToFavorite(products: Products) {
+    //pref.getString("userId")!!, products) from "MySharedPrefrance " from "sing in fragment ":
+        viewModel.addToFavorite(firebaseDb, pref.getString("userId")!!, products)
+
     }
 
 
-
-
-
-    }
-
-
-
+}

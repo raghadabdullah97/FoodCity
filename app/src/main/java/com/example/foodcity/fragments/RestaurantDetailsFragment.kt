@@ -5,7 +5,6 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
@@ -14,7 +13,6 @@ import com.example.foodcity.R
 import com.example.foodcity.adapters.ProductsAdapter
 
 import com.example.foodcity.databinding.FragmentRestaurantDetailsBinding
-import com.example.foodcity.fragments.mainFragments.CityFragmentDirections
 import com.example.foodcity.model.Products
 import com.example.foodcity.util.*
 
@@ -106,7 +104,7 @@ class RestaurantDetailsFragment : Fragment(R.layout.fragment_restaurant_details)
     }
 
     private fun initRecycleView(data:List<Products>){
-        val adapter = ProductsAdapter(data)
+        val adapter = ProductsAdapter(data, true)
         binding.rvProducts.adapter = adapter
 
         adapter.onItemClick = {

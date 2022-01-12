@@ -26,10 +26,16 @@
     <string name="restaurant_inside_city">مطاعم داخل المدينة</string>
     <string name="restaurant_name">إسم المطعم </string>
     <string name="login_guest">الدخول كزائر</string>
-    <string name="name_city">name city</string>
+    <string name="name_city">اسم المدينه </string>
     <string name="km">km</string>
     <string name="_20_km">20 Km</string>
     <string name="جدة">جدة</string>
+    <string name="add_favorite">إضافة الى المفضله </string>
+    <string name="product_details">"تفاصيل المنتج "</string>
+    <string name="product_description">وصف المنتج </string>
+    <string name="add_to_favorite">إضافه الى المفضله :</string>
+    <string name="restaurant_description">وصف المطعم </string>
+    <string name="your_email_is">your Email is :</string>
 
 
 </resources>

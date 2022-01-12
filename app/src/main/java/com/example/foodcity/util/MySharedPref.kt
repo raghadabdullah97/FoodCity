@@ -2,12 +2,13 @@ package com.example.foodcity.util
 import android.content.Context
 
 
-class MySharedPref constructor( context: Context) {
+class MySharedPref  constructor( context: Context) {
 
     private val prefs = context.getSharedPreferences("prefKey", Context.MODE_PRIVATE)
 
     fun getString(key: String, defaultVal: String = "") = prefs.getString(key, defaultVal)
 
+    // read , used in "NearbyAdapter" in"longitude,latitude,":
     fun getDouble(key: String, defaultVal: Float = 0.0f) =
         prefs.getFloat(key, defaultVal).toDouble()
 
@@ -34,6 +35,7 @@ class MySharedPref constructor( context: Context) {
         prefs.edit().putFloat(key, query).apply()
     }
 
+    // store , used in "NearbyAdapter" in"longitude,latitude,":
     fun setDouble(key: String, query: Double) {
         prefs.edit().putFloat(key, query.toFloat()).apply()
     }
@@ -51,11 +53,11 @@ class MySharedPref constructor( context: Context) {
             prefs.edit().putStringSet(key, query).apply()
     }
 
-
+   // remove from MySharedPreference  :
     fun clearByKey(key: String) {
         prefs.edit().remove(key).apply()
     }
-
+    // delete all MySharedPreference  :
     fun clearAllValue() {
         prefs.edit().clear().apply()
     }

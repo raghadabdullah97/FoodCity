@@ -8,13 +8,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_5sdp"
-        app:cardElevation="@dimen/_2sdp"
-        app:cardCornerRadius="@dimen/_15sdp">
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="@dimen/_2sdp">
 
         <RelativeLayout
+            android:id="@+id/rlProduct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/rlProduct"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
@@ -25,9 +25,9 @@
                 android:id="@+id/linDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:layout_toStartOf="@+id/card"
-                android:layout_alignParentStart="true"
                 android:orientation="vertical"
                 android:paddingHorizontal="@dimen/_10sdp">
 
@@ -36,7 +36,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/cairo_bold"
-                    android:text="@string/name of the meal"
+                    android:text="هامبرجر"
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/_12ssp" />
 
@@ -44,10 +44,10 @@
                     android:id="@+id/tvDetailsProduct"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/cairo_reqular"
-                    android:text="@string/تفاصيل"
-                    android:maxLines="3"
                     android:ellipsize="end"
+                    android:fontFamily="@font/cairo_reqular"
+                    android:maxLines="3"
+                    android:text="قطع صدر دجاج مع خس والذرة مطهوة والذرة مطهوة على الصاج"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/_9ssp" />
 
@@ -58,16 +58,16 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/btnAddToCartProduct"
+                        android:id="@+id/btnAddToFavorite"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/shape_light_green"
-                        android:fontFamily="@font/cairo_reqular"
-                        android:text="@string/إضافه"
+                        android:backgroundTint="@color/colorPrimary"
                         android:clickable="true"
                         android:focusable="true"
+                        android:fontFamily="@font/cairo_reqular"
                         android:foreground="?attr/selectableItemBackground"
-                        android:backgroundTint="@color/colorPrimary"
+                        android:text="@string/add_favorite"
                         android:textColor="@color/colorWhite"
                         android:textSize="@dimen/_9ssp" />
 
@@ -82,16 +82,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/cairo_reqular"
-                        android:text="@string/وجبات"
+                        android:text="وجبات"
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/_9ssp" />
 
                 </LinearLayout>
 
 
-
             </LinearLayout>
-
 
 
             <androidx.cardview.widget.CardView

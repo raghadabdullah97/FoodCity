@@ -6,17 +6,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include
-        android:id="@+id/itemRestaurant"
-        layout="@layout/item_restaurant" />
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvProducts"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_product" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/cairo_bold"
+        android:text="@string/your_email_is"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_12ssp" />
 
 </LinearLayout>
