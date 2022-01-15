@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
@@ -10,11 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_10sdp"
+        app:cardUseCompatPadding="true"
         app:cardCornerRadius="@dimen/_5sdp"
         app:cardElevation="@dimen/_5sdp">
 
         <LinearLayout
             android:id="@+id/container"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -22,26 +24,23 @@
             android:orientation="vertical"
             android:padding="@dimen/_5sdp">
 
-            <TextView
-                android:id="@+id/tvName"
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip"
+                app:chipBackgroundColor="#A3EC9706"
                 android:layout_width="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:fontFamily="@font/cairo_bold"
-                android:text="@string/جدة"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_15ssp" />
-
-
+                />
             <TextView
                 android:id="@+id/tvDistance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
+                android:textSize="@dimen/_8ssp"
                 android:layout_marginBottom="@dimen/_5sdp"
-                android:drawablePadding="@dimen/_10sdp"
+                android:drawablePadding="@dimen/_5sdp"
                 android:fontFamily="@font/cairo_reqular"
-                android:text="@string/_20_km"
+                android:text="20 Km"
                 app:drawableStartCompat="@drawable/ic_gps" />
 
 

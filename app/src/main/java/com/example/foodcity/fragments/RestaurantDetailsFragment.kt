@@ -1,5 +1,7 @@
 package com.example.foodcity.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -20,6 +22,8 @@ import com.example.foodcity.viewmodel.FirebaseViewModel
 import com.google.firebase.firestore.FirebaseFirestore
 import isRestaurantOpen
 import toTime
+import java.lang.String.format
+import java.util.*
 
 
 class RestaurantDetailsFragment : Fragment(R.layout.fragment_restaurant_details) {
@@ -39,6 +43,12 @@ class RestaurantDetailsFragment : Fragment(R.layout.fragment_restaurant_details)
         viewModel = ViewModelProvider(this)[FirebaseViewModel::class.java]
         fetchProductsByRetName()
         handleRestaurantItem()
+
+        binding.itemRestaurant.lin.setOnClickListener {
+
+            gotoRating(arg.restaurant.location?.latitude, arg.restaurant.location?.longitude)
+
+        }
 
     }
 
@@ -114,4 +124,13 @@ class RestaurantDetailsFragment : Fragment(R.layout.fragment_restaurant_details)
         }
     }
 
+
+
+    private fun gotoRating(latitude: Double?, longitude: Double?) {
+        val uri: String = format(Locale.ENGLISH, "geo:%f,%f", latitude, longitude)
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
+        requireContext().startActivity(intent)
+    }
+
 }
+

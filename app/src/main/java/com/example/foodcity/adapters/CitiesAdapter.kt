@@ -41,7 +41,7 @@ class CitiesAdapter( var data: List<Cities>) :
         fun bind(city: Cities) {
             val context = binding.root.context
             binding.apply {
-                tvName.text = city.name
+                chip.text = city.name
                 //get location user:
                 val pref = MySharedPref(context)
             //"distance"The current location of the (user and city):
@@ -54,6 +54,9 @@ class CitiesAdapter( var data: List<Cities>) :
 
                 tvDistance.text = distance
 
+                chip.setOnClickListener {
+                    onItemClick?.invoke(city)
+                }
 
             }
         }

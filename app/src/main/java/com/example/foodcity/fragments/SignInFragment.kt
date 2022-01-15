@@ -81,6 +81,8 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
                             if (rb.isChecked){
                                 pref.setBoolean("isRegister",true)
                             }
+
+                            pref.setString("email",it.data?.user?.email)
                             val action =
                                 SignInFragmentDirections.actionSignInFragmentToHomeFragment()
                             findNavController().navigate(action)
@@ -146,6 +148,16 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
                     }
                     Status.SUCCESS -> {
                         Log.e(TAG, "SUCCESS: ")
+                        // store " UID " in Fav :
+                        pref.setString("userId",it.data?.user?.uid)
+                        pref.setString("email",it.data?.user?.email)
+                        if (binding.rb.isChecked){
+                            pref.setBoolean("isRegister",true)
+                        }
+                        val action =
+                            SignInFragmentDirections.actionSignInFragmentToHomeFragment()
+                        findNavController().navigate(action)
+
                     }
                     Status.ERROR -> {
                         Log.e(TAG, "ERROR: ")

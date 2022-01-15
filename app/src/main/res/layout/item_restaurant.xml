@@ -10,9 +10,6 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:foreground="?attr/selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
         android:layout_margin="@dimen/_10sdp"
         android:elevation="@dimen/_8sdp"
         app:cardCornerRadius="@dimen/_10sdp">
@@ -51,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:drawablePadding="@dimen/_5sdp"
                     android:fontFamily="@font/cairo_reqular"
-                    android:text="مطعم KFC للدجاج"
+                    android:text="@string/kfc"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/_10ssp" />
 
@@ -69,14 +66,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-2dp"
                         android:layout_marginBottom="-2dp"
-                        android:paddingBottom="@dimen/_2sdp"
                         android:background="@drawable/shape_open"
                         android:backgroundTint="@color/green_light"
                         android:fontFamily="@font/cairo_reqular"
+                        android:gravity="center"
                         android:paddingStart="@dimen/_8sdp"
                         android:paddingEnd="@dimen/_8sdp"
-                        android:gravity="center"
-                        android:text="مفتوح"
+                        android:paddingBottom="@dimen/_2sdp"
+                        android:text="@string/مفتوح"
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/_8ssp" />
 
@@ -88,9 +85,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="end"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:gravity="center_vertical"
-                android:layout_gravity="end"
                 android:orientation="vertical">
 
                 <TextView
@@ -98,28 +95,32 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
+                    android:layout_marginTop="5sp"
                     android:drawablePadding="@dimen/_5sdp"
                     android:fontFamily="@font/cairo_reqular"
-                    android:text="10:00 AM - 11:30 PM"
+                    android:text="@string/_10_00_am_11_30_pm"
                     android:textColor="@color/colorGrey3"
-                    android:layout_marginTop="5sp"
                     android:textSize="@dimen/_7ssp" />
 
                 <LinearLayout
+                    android:id="@+id/lin"
                     android:layout_width="wrap_content"
+                    android:padding="@dimen/_3sdp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@color/green_light"
+                    android:foreground="?attr/selectableItemBackground"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/tvDistanceStore"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="center"
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:fontFamily="@font/cairo_reqular"
                         android:gravity="center"
-                        android:text="10 Kms"
+                        android:text="@string/_10_kms"
                         android:textColor="@color/colorGrey3"
                         android:textSize="@dimen/_7ssp" />
 
@@ -130,6 +131,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:padding="@dimen/_3sdp"
                         android:rating="3" />
 
 

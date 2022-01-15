@@ -66,7 +66,7 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
 
         adapter.onItemClick = {
             val action =
-                RestaurantDetailsFragmentDirections.actionRestaurantDetailsFragmentToProductDetailsFragment(
+                FavoriteFragmentDirections.actionFavoriteFragmentToProductDetailsFragment(
                     it
                 )
             findNavController().navigate(action)

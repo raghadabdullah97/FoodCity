@@ -20,9 +20,9 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="search_by_product">Search by product name</string>
-    <string name="meals">meals</string>
-    <string name="drinks">drinks</string>
-    <string name="sweets">sweets</string>
+    <string name="meals">وجبات</string>
+    <string name="drinks">مشروبات</string>
+    <string name="sweets">حلويات</string>
     <string name="restaurant_inside_city">Restaurants inside</string>
     <string name="restaurant_name">Restaurant name</string>
     <string name="login_guest">Enter as guest</string>
@@ -36,4 +36,9 @@
     <string name="add_to_favorite">add to favorite</string>
     <string name="restaurant_description">restaurant description</string>
     <string name="your_email_is">your Email is :</string>
+    <string name="_10_kms">10 Kms</string>
+    <string name="_10_00_am_11_30_pm">10:00 AM - 11:30 PM</string>
+    <string name="مفتوح">مفتوح</string>
+    <string name="kfc">مطعم KFC للدجاج</string>
+    <string name="logout">logout</string>
 </resources>

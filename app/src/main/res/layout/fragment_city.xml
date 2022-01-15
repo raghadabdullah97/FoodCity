@@ -11,31 +11,31 @@
         android:orientation="vertical">
 
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_10sdp"
-            android:layout_marginVertical="@dimen/_5sdp"
-            android:paddingVertical="@dimen/_8sdp"
-            app:cardCornerRadius="@dimen/_5sdp">
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="@dimen/_10sdp"-->
+<!--            android:layout_marginVertical="@dimen/_5sdp"-->
+<!--            android:paddingVertical="@dimen/_8sdp"-->
+<!--            app:cardCornerRadius="@dimen/_5sdp">-->
 
-            <EditText
-                android:id="@+id/searchHome"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorWhite"
-                android:drawableEnd="@drawable/ic_search"
-                android:drawablePadding="@dimen/_5sdp"
-                android:fontFamily="@font/cairo_reqular"
-                android:hint="@string/search_by_product"
-                android:imeOptions="actionSearch"
-                android:inputType="text"
-                android:paddingHorizontal="@dimen/_3sdp"
-                android:paddingVertical="@dimen/_10sdp"
-                android:textColorHint="@color/colorGrey"
-                android:textSize="@dimen/_10ssp" />
+<!--            <EditText-->
+<!--                android:id="@+id/searchHome"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@color/colorWhite"-->
+<!--                android:drawableEnd="@drawable/ic_search"-->
+<!--                android:drawablePadding="@dimen/_5sdp"-->
+<!--                android:fontFamily="@font/cairo_reqular"-->
+<!--                android:hint="@string/search_by_product"-->
+<!--                android:imeOptions="actionSearch"-->
+<!--                android:inputType="text"-->
+<!--                android:paddingHorizontal="@dimen/_3sdp"-->
+<!--                android:paddingVertical="@dimen/_10sdp"-->
+<!--                android:textColorHint="@color/colorGrey"-->
+<!--                android:textSize="@dimen/_10ssp" />-->
 
-        </com.google.android.material.card.MaterialCardView>
+<!--        </com.google.android.material.card.MaterialCardView>-->
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
@@ -76,7 +76,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:spanCount="2"
             tools:listitem="@layout/item_home_near" />
     </LinearLayout>
 

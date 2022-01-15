@@ -33,7 +33,6 @@ class ProductsFragment(val cityName: String, val position: Int) :
         viewModel = ViewModelProvider(this)[FirebaseViewModel::class.java]
         pref = MySharedPref(requireContext())
 
-        fetchProductsCityName()
         //  check the position:
         when (position){
 

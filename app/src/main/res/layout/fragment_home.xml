@@ -27,21 +27,16 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             app:ci_drawable="@drawable/sh_pager_selected"
-            app:ci_drawable_unselected="@drawable/sh_pager_unselected"/>
-
-
-
-
-
+            app:ci_drawable_unselected="@drawable/sh_pager_unselected" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCities"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:nestedScrollingEnabled="false"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="4"
+            android:orientation="horizontal"
             tools:listitem="@layout/item_city" />
 
 
@@ -49,13 +44,12 @@
             android:id="@+id/tvNearby"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:background="?attr/selectableItemBackground"
             android:fontFamily="@font/cairo_reqular"
-            android:layout_marginHorizontal= "@dimen/_5sdp"
             android:padding="@dimen/_3sdp"
             android:text="@string/nearby_places"
-            android:textStyle="bold"
             android:textColor="@color/black" />
 
         <androidx.recyclerview.widget.RecyclerView

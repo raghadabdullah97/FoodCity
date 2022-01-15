@@ -37,11 +37,11 @@
                     android:textSize="@dimen/_15ssp" />
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="87dp"
+                    android:layout_height="61dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/_20sdp"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/iconmyapp" />
 
 
                 <LinearLayout
