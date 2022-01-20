@@ -120,7 +120,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
         resultLauncher.launch(signInIntent)
 
     }
-
+// like On Activity Result  \
     private val resultLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(it.data)

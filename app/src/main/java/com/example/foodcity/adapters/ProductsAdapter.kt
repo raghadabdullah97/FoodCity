@@ -42,10 +42,11 @@ class ProductsAdapter(var data: List<Products>,var isFavorite: Boolean=false) :
     inner class ViewHolder(private val binding: ItemProductBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-
+        //Easy to access "item"xml :
         fun bind(products: Products) {
             val context = binding.root.context
             binding.apply {
+                //"id "
                 tvTitleProduct.text = products.name
                 tvDetailsProduct.text = products.details
                 tvCat.text = products.catType?.title

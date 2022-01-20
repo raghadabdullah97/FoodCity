@@ -19,6 +19,7 @@ class CitiesAdapter( var data: List<Cities>) :
     val TAG = "ChatAdapter"
       var onItemClick: ((Cities) -> Unit)? = null
 
+    //connect "item city"
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
         val binding =
             ItemCityBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
@@ -38,6 +39,7 @@ class CitiesAdapter( var data: List<Cities>) :
     inner class ViewHolder(private val binding: ItemCityBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        //Easy to access "item"xml :
         fun bind(city: Cities) {
             val context = binding.root.context
             binding.apply {

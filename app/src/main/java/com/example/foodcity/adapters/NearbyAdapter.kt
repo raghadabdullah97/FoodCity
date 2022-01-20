@@ -41,7 +41,7 @@
             binding.apply {
                 tvName.text = restaurants.name
 
-
+    //get (City, distance, name) restaurant and photo from shared pref:
                 val pref = MySharedPref(context)
 
                 val distance = distance(

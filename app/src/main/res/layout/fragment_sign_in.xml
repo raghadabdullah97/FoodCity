@@ -36,12 +36,21 @@
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/_15ssp" />
 
-                <ImageView
-                    android:layout_width="87dp"
-                    android:layout_height="61dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:src="@drawable/iconmyapp" />
+<!--                <ImageView-->
+<!--                    android:layout_width="108dp"-->
+<!--                    android:layout_height="67dp"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_marginTop="@dimen/_20sdp"-->
+<!--                    android:src="@drawable/iconmyapp" />-->
+
+<!--                -->
+<!--                <com.google.android.material.imageview.ShapeableImageView-->
+<!--                    android:layout_width="108dp"-->
+<!--                    android:layout_height="67dp"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:src="@drawable/iconmyapp"-->
+<!--                    ra-->
+<!--                    />-->
 
 
                 <LinearLayout

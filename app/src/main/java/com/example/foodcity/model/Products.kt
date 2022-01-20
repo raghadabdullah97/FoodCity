@@ -5,6 +5,7 @@ import com.google.firebase.firestore.DocumentId
 import kotlinx.parcelize.Parcelize
 
 //import com.google.firebase.firestore.DocumentId
+//sending the package
 @Parcelize
 data class Products(
     val name: String = "",

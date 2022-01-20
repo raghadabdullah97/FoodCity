@@ -57,6 +57,8 @@ class CityFragment : Fragment(R.layout.fragment_city) {
             tvNearby.text = "${getString(R.string.restaurant_inside_city)} ${args.cityName}"
 
         }
+
+
         fetchRestaurantsByCityName()
 
     }
