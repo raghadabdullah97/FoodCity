@@ -45,12 +45,8 @@ It will make it easier for visitors and travelers to quickly access the most fam
 
 
 
-* Books list , and book deatils :
 
-
-
-
-* SearchPage :
+* Screenshot :
 <img width="350" alt="Screen Shot 2021-12-05 at 2 27 24 PM" src="https://raw.githubusercontent.com/raghadabdullah97/FoodCity/master/app/src/main/res/drawable/onee.PNG">
 <img width="350" alt="Screen Shot 2021-12-05 at 2 27 24 PM" src="https://raw.githubusercontent.com/raghadabdullah97/FoodCity/master/app/src/main/res/drawable/tow.PNG">
 <img width="350" alt="Screen Shot 2021-12-05 at 2 27 24 PM" src="https://raw.githubusercontent.com/raghadabdullah97/FoodCity/master/app/src/main/res/drawable/three.PNG">
@@ -65,6 +61,6 @@ It will make it easier for visitors and travelers to quickly access the most fam
 
 
 
-* Authentication :
+
 
 
