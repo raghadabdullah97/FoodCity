@@ -51,6 +51,15 @@ It will make it easier for visitors and travelers to quickly access the most fam
 
 
 * SearchPage :
+<img width="350" alt="Screen Shot 2021-12-05 at 2 27 24 PM" src="https://raw.githubusercontent.com/raghadabdullah97/FoodCity/master/app/src/main/res/drawable/onee.PNG">
+<img width="350" alt="Screen Shot 2021-12-05 at 2 27 24 PM" src="https://raw.githubusercontent.com/raghadabdullah97/FoodCity/master/app/src/main/res/drawable/tow.PNG">
+<img width="350" alt="Screen Shot 2021-12-05 at 2 27 24 PM" src="https://raw.githubusercontent.com/raghadabdullah97/FoodCity/master/app/src/main/res/drawable/three.PNG">
+<img width="350" alt="Screen Shot 2021-12-05 at 2 27 24 PM" src="https://raw.githubusercontent.com/raghadabdullah97/FoodCity/master/app/src/main/res/drawable/four.PNG">
+<img width="350" alt="Screen Shot 2021-12-05 at 2 27 24 PM" src="https://raw.githubusercontent.com/raghadabdullah97/FoodCity/master/app/src/main/res/drawable/five.PNG">
+<img width="350" alt="Screen Shot 2021-12-05 at 2 27 24 PM" src="https://raw.githubusercontent.com/raghadabdullah97/FoodCity/master/app/src/main/res/drawable/six.PNG">
+<img width="350" alt="Screen Shot 2021-12-05 at 2 27 24 PM" src="https://raw.githubusercontent.com/raghadabdullah97/FoodCity/master/app/src/main/res/drawable/eitgt.PNG">
+<img width="350" alt="Screen Shot 2021-12-05 at 2 27 24 PM" src="https://raw.githubusercontent.com/raghadabdullah97/FoodCity/master/app/src/main/res/drawable/savin.PNG">
+
 
 
 
