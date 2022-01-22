@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         getCurrentUserLocation()
 
     }
-    // fun bind(city: Cities) from "CitiAdapter"
+    // fun bind(city: Cities) from "CitiAdapter" , for "current distance from user" :
     private fun getCurrentUserLocation() {
         locationHelper = LocationHelper(this, object : LocationManager {
             override fun onLocationChanged(location: Location?) {
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-        //fun getLastKnownLocation(location: Location?)
+        //fun get Last Known Location(location: Location?)
     private fun saveLocationInPref(location: Location?) {
         if (location != null) {
             pref.setDouble("lat", location.latitude)

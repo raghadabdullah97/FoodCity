@@ -6,6 +6,7 @@ class MySharedPref  constructor( context: Context) {
 
     private val prefs = context.getSharedPreferences("prefKey", Context.MODE_PRIVATE)
 
+    //ProfileFragment "concatenate with"getString(R.string.your_email_is)" and display "Email" :
     fun getString(key: String, defaultVal: String = "") = prefs.getString(key, defaultVal)
 
     // read , used in "NearbyAdapter" in"longitude,latitude,":

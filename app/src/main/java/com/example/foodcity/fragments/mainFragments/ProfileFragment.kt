@@ -34,15 +34,16 @@ class ProfileFragment : Fragment(R.layout.fragment_prfile) {
         firebaseAuth = FirebaseAuth.getInstance()
 
         viewModel = ViewModelProvider(this)[FirebaseViewModel::class.java]
-
+    //concatenate with"getString(R.string.your_email_is)" and display "Email":
         binding.tvProfile.text =
             "${getString(R.string.your_email_is)} \n ${pref.getString("email")}"
 
         binding.btnLogout.setOnClickListener {
             firebaseAuth.signOut()
-            // store " UID " in Fav :
+            // store " UID " in Fav , "clearByKey" from MySharedPref because remove "id and email":
             pref.clearByKey("userId")
             pref.clearByKey("email")
+            //"false " because of logging out :
             pref.setBoolean("isRegister", false)
             val action = ProfileFragmentDirections.actionProfileFragmentToSignInFragment()
             findNavController().navigate(action)
