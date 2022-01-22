@@ -1,3 +1,45 @@
 <resources>
     <string name="app_name">FoodCity</string>
+
+
+    <string name="sign_in">Sign in</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="you_dont_have_account">Do you have an account?</string>
+    <string name="create_account">Create account</string>
+    <string name="register">Create new Account</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="nearby">far away from you</string>
+    <string name="nearby_places">Places near you (view all)</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="favorite">Favorite</string>
+    <string name="restaurants">Nearby Restaurants</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="search_by_product">Search by product name</string>
+    <string name="meals">وجبات</string>
+    <string name="drinks">مشروبات</string>
+    <string name="sweets">حلويات</string>
+    <string name="restaurant_inside_city">Restaurants inside</string>
+    <string name="restaurant_name">Restaurant name</string>
+    <string name="login_guest">Enter as guest</string>
+    <string name="name_city">name city</string>
+    <string name="km">km</string>
+    <string name="_20_km">20 Km</string>
+    <string name="جدة">جدة</string>
+    <string name="add_favorite">add favorite</string>
+    <string name="product_details">"Product Details "</string>
+    <string name="product_description">product description</string>
+    <string name="add_to_favorite">add to favorite</string>
+    <string name="restaurant_description">restaurant description</string>
+    <string name="your_email_is">your Email is :</string>
+    <string name="_10_kms">10 Kms</string>
+    <string name="_10_00_am_11_30_pm">10:00 AM - 11:30 PM</string>
+    <string name="مفتوح">مفتوح</string>
+    <string name="kfc">مطعم KFC للدجاج</string>
+    <string name="logout">logout</string>
+    <string name="qout">QOUT</string>
 </resources>

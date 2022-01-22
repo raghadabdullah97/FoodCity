@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">FoodCity</string>
+
+
+    <string name="sign_in">تسجيل دخول</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="remember_me">تذكرني</string>
+    <string name="forgot_password">نسيت كلمة المرور؟</string>
+    <string name="you_dont_have_account">هل لديك حساب؟</string>
+    <string name="create_account">انشاء حساب</string>
+    <string name="register">انشاء حساب جديد</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="nearby">يبعد عنك مسافة</string>
+    <string name="nearby_places">أماكن قريبة منك (مشاهدة الجميع)</string>
+    <string name="home">الرئيسية</string>
+    <string name="restaurants">المطاعم القريبة</string>
+    <string name="open">مفتوح</string>
+    <string name="close">مغلق</string>
+    <string name="profile">الصفحة الشخصية</string>
+    <string name="favorite">المفضلة</string>
+    <string name="search_by_product">البحث باسم الوجبه </string>
+    <string name="drinks">مشروبات</string>
+    <string name="sweets">حلويات</string>
+    <string name="meals">وجبات</string>
+    <string name="restaurant_inside_city">مطاعم داخل المدينة</string>
+    <string name="restaurant_name">إسم المطعم </string>
+    <string name="login_guest">الدخول كزائر</string>
+    <string name="name_city">اسم المدينه </string>
+    <string name="km">km</string>
+    <string name="_20_km">20 Km</string>
+    <string name="جدة">جدة</string>
+    <string name="add_favorite">إضافة الى المفضله </string>
+    <string name="product_details">"تفاصيل المنتج "</string>
+    <string name="product_description">وصف المنتج </string>
+    <string name="add_to_favorite">إضافه الى المفضله :</string>
+    <string name="restaurant_description">وصف المطعم </string>
+    <string name="your_email_is">الأيميل :</string>
+    <string name="_10_kms">10 Kms</string>
+    <string name="_10_00_am_11_30_pm">10:00 AM - 11:30 PM</string>
+    <string name="مفتوح">مفتوح</string>
+    <string name="kfc">مطعم KFC للدجاج</string>
+    <string name="logout">تسجيل الخروج </string>
+    <string name="qout">قـوت</string>
+
+
+</resources>
